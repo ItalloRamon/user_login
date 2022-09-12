@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style-home.css' %}">
+    <title>User Login</title>
+</head>
+<body>
+    <main class="center">
+        {% if user.is_authenticated %}
+        <h1>Welcome to my website, <span>{{user.username}}!</span></h1>
+        <a href="logout"><button class="button">Logout</button></a>
+        {% else %}
+        <h1>Welcome to my website, <span>guest!</span></h1>
+        <a href="login"><button class="button">Login</button></a>
+        {% endif %}
+    </main>
+</body>
+</html>
